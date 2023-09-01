@@ -1,0 +1,18 @@
+.products-list{
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+    gap: 1rem;
+    padding: 0 10px;
+}
+
+.product-cat{
+    margin: 3.5rem 0;
+    background-color: #f5dcdc;
+    padding: 1rem 0;
+}
+
+.product-cat-heading{
+    margin-bottom: 1rem;
+    padding: 0 10px;
+}

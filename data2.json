@@ -1,0 +1,218 @@
+[
+    {
+      "product_id": "12345",
+      "product_category": "fashion",
+      "product_name": "Stylish Denim Jacket",
+      "product_brand": "Levi's",
+      "product_price": 79.99,
+      "discount": 20,
+      "mrp": 99.99,
+      "photos": [
+        "https://example.com/denim_jacket_photo1.jpg",
+        "https://example.com/denim_jacket_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r103",
+          "user_id": "user456",
+          "rating": 4,
+          "comment": "Great jacket for the price."
+        },
+        {
+          "id": "r104",
+          "user_id": "user789",
+          "rating": 5,
+          "comment": "Love the fit and style!"
+        }
+      ]
+    },
+    {
+      "product_id": "67890",
+      "product_category": "smartphones",
+      "product_name": "High-Performance Smartphone",
+      "product_brand": "Samsung",
+      "product_price": 699.99,
+      "discount": 15,
+      "mrp": 799.99,
+      "photos": [
+        "https://example.com/smartphone_photo1.jpg",
+        "https://example.com/smartphone_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r105",
+          "user_id": "user987",
+          "rating": 4,
+          "comment": "Fast and reliable phone."
+        },
+        {
+          "id": "r106",
+          "user_id": "user654",
+          "rating": 5,
+          "comment": "Impressive camera quality!"
+        }
+      ]
+    },
+    {
+      "product_id": "24680",
+      "product_category": "men-fashion",
+      "product_name": "Classic Leather Belt",
+      "product_brand": "Calvin Klein",
+      "product_price": 39.99,
+      "discount": 10,
+      "mrp": 44.99,
+      "photos": [
+        "https://example.com/leather_belt_photo1.jpg",
+        "https://example.com/leather_belt_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r107",
+          "user_id": "user321",
+          "rating": 4,
+          "comment": "Durable and stylish!"
+        },
+        {
+          "id": "r108",
+          "user_id": "user789",
+          "rating": 5,
+          "comment": "Great addition to my wardrobe."
+        }
+      ]
+    },
+    {
+      "product_id": "13579",
+      "product_category": "women-fashion",
+      "product_name": "Elegant Floral Dress",
+      "product_brand": "Zara",
+      "product_price": 59.99,
+      "discount": 25,
+      "mrp": 79.99,
+      "photos": [
+        "https://example.com/floral_dress_photo1.jpg",
+        "https://example.com/floral_dress_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r109",
+          "user_id": "user567",
+          "rating": 5,
+          "comment": "Absolutely stunning dress!"
+        },
+        {
+          "id": "r110",
+          "user_id": "user890",
+          "rating": 4,
+          "comment": "Fits perfectly and very comfortable."
+        }
+      ]
+    },
+    {
+      "product_id": "35791",
+      "product_category": "beauty",
+      "product_name": "Hydrating Facial Serum",
+      "product_brand": "Glossier",
+      "product_price": 29.99,
+      "discount": 20,
+      "mrp": 37.99,
+      "photos": [
+        "https://example.com/facial_serum_photo1.jpg",
+        "https://example.com/facial_serum_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r111",
+          "user_id": "user234",
+          "rating": 4,
+          "comment": "Leaves my skin feeling refreshed."
+        },
+        {
+          "id": "r112",
+          "user_id": "user789",
+          "rating": 5,
+          "comment": "My new skincare staple!"
+        }
+      ]
+    },
+    {
+      "product_id": "57913",
+      "product_category": "electronics",
+      "product_name": "Wireless Bluetooth Headphones",
+      "product_brand": "Sony",
+      "product_price": 149.99,
+      "discount": 30,
+      "mrp": 199.99,
+      "photos": [
+        "https://example.com/headphones_photo1.jpg",
+        "https://example.com/headphones_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r113",
+          "user_id": "user765",
+          "rating": 5,
+          "comment": "Amazing sound quality and comfort!"
+        },
+        {
+          "id": "r114",
+          "user_id": "user123",
+          "rating": 4,
+          "comment": "Good value for the price."
+        }
+      ]
+    },
+    {
+      "product_id": "86420",
+      "product_category": "men-fashion",
+      "product_name": "Casual Cotton Shirt",
+      "product_brand": "H&M",
+      "product_price": 34.99,
+      "discount": 15,
+      "mrp": 39.99,
+      "photos": [
+        "https://example.com/cotton_shirt_photo1.jpg",
+        "https://example.com/cotton_shirt_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r115",
+          "user_id": "user890",
+          "rating": 4,
+          "comment": "Comfortable and versatile shirt."
+        },
+        {
+          "id": "r116",
+          "user_id": "user456",
+          "rating": 5,
+          "comment": "Great for both casual and formal occasions."
+        }
+      ]
+    },
+    {
+      "product_id": "24681",
+      "product_category": "electronics",
+      "product_name": "Smart Home Security Camera",
+      "product_brand": "Nest",
+      "product_price": 199.99,
+      "discount": 10,
+      "mrp": 219.99,
+      "photos": [
+        "https://example.com/security_camera_photo1.jpg",
+        "https://example.com/security_camera_photo2.jpg"
+      ],
+      "product_reviews": [
+        {
+          "id": "r117",
+          "user_id": "user987",
+          "rating": 4,
+          "comment": "Easy to set up and reliable."
+        },
+        {
+          "id": "r118",
+          "user_id": "user654",
+          "rating": 5,
+          "comment": "Provides peace of mind."
+        }
+        ]
+    }
+]    
