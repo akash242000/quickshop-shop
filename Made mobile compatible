@@ -1,0 +1,29 @@
+[33mcommit 348c3956dbbf76f7240a7ff203c74a4f6c1d63ca[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Akash <akash24may@gmail.com>
+Date:   Fri Sep 8 13:29:07 2023 +0530
+
+    removed
+
+[33mcommit cf514893a6c28e44475d09724832ed5fa2d20b97[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Akash <akash24may@gmail.com>
+Date:   Fri Sep 8 13:24:20 2023 +0530
+
+    Git changes
+
+[33mcommit bad97e7f71ed2342735a09d17e1a18e45919fd15[m
+Author: Akash <akash24may@gmail.com>
+Date:   Fri Sep 8 12:58:48 2023 +0530
+
+    Made mobile compatible
+
+[33mcommit fb8fb0c68a51d38cb600c4eaa3ed08bf8e59ded7[m
+Author: Akash <akash24may@gmail.com>
+Date:   Fri Sep 1 17:25:10 2023 +0530
+
+    Cart-done
+
+[33mcommit 9257b4164e1c5f7bf7279a582aa2739ac1d8f987[m
+Author: Akash <akash24may@gmail.com>
+Date:   Tue Jul 18 19:46:24 2023 +0530
+
+    Initialize project using Create React App
