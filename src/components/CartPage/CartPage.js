@@ -12,14 +12,6 @@ export default function CartPage() {
 
     const dispatch =useDispatch();
 
-    // useEffect(()=>{
-    //     dispatch(fetchUserCart(authToken));
-    // },[])
-
-   
-    // const price= useSelector((state, productId)=> getProductPrice(state, productId));
-    const productId= "1004";
-
     const authToken= localStorage.getItem('auth-token');
     const cart= useSelector(userCartItems);
 
@@ -33,25 +25,35 @@ export default function CartPage() {
   return (
     <>
     {authToken?
-      <div className='cartpage'>
-        <div className="header">
-          <h3>My Cart</h3>
-          <span className="price-total-box"></span>
-        </div>  
+      <>
+        {!cart.length==0?
+          <div className='cartpage'>
+          <div className="header">
+            <h3>My Cart</h3>
+            <span className="price-total-box"></span>
+          </div>  
 
-      <section className='cart-page-main'>
-        <div className="cart-items-list">
-            {cart.map((item)=>{
-                return <CartProductCard key={item.product_id} product={item}/>
-            })}
-        </div>
+        <section className='cart-page-main'>
+          <div className="cart-items-list">
+              {cart.map((item)=>{
+                  return <CartProductCard key={item.product_id} product={item}/>
+              })}
+          </div>
 
-        <div className="cart-page-total-box">
-          <h3>Total:</h3>
-          <h2 className='total-heading' >{toRuppe.format(cartTotal)}</h2>
-        </div>
-      </section>
-      </div>
+          <div className="cart-page-total-box">
+            <h3>Total:</h3>
+            <h2 className='total-heading' >{toRuppe.format(cartTotal)}</h2>
+          </div>
+        </section>
+          </div>
+          :
+          <div className="no-item-alert-wrapper">
+            <div className="no-items-alert">
+              No Items in Cart
+            </div>
+          </div>
+        }
+      </>  
       :
       <LoginPrompts/>
     }

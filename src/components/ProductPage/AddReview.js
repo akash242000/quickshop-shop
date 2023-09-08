@@ -37,8 +37,8 @@ export default function AddReview({authToken,productId}) {
 
             <div className="review-form-component">
               <label>Rating</label>
-              <select onChange={(event)=>setRating(event.target.value)} value={review}>
-                <option value={1}>1</option>
+              <select onChange={(event)=>setRating(event.target.value)}>
+                <option selected="selected" value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
                 <option value={4}>4</option>

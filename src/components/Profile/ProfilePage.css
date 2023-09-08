@@ -1,0 +1,14 @@
+.profile-page{
+    height: 100vh;
+    margin-top: 5rem;
+}
+
+.personal-header{
+    text-align: center;
+}
+
+.profile-box{
+    margin-top: 5rem;
+    text-align: center;
+    color: red;
+}

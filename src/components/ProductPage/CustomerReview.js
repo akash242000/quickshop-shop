@@ -49,7 +49,7 @@ export default function CustomerReview({review}) {
 
       <div className='customer-review-card'>
           <div className="c-r-card-header">
-                <h5>{userName}</h5>
+                <h5 className='review-cust-name'>{userName}</h5>
               <RatingStars ratings={review.rating} />
           </div>
 

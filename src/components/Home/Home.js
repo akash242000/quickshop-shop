@@ -1,30 +1,30 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import HomeContainers from '../HomeContainer/HomeContainers';
 import ProductPage from '../ProductPage/ProductPage';
 import ProductList from '../ProductList/ProductList';
 import SearchProducts from '../SearchProducts/SearchProducts';
 import CategoryList from '../CategoryList';
 import ProfilePage from '../Profile/ProfilePage';
-import MainSlider from '../MainSlider';
+import NotFound from '../NotFound';
 import CartPage from '../CartPage/CartPage';
 import WishlistPage from '../WishlistPage/WishlistPage';
 import ProfilePopup from '../ProfilePopup/ProfilePopup';
 import { useProfilePopupContext } from '../../contex/popupContex';
-import CarouselHome from '../CarouselHome/CarouselHome';
+import Footer from '../Footer/Footer';
 
 export default function Home() {
 
   const {profilePopup,showProfilePopup} = useProfilePopupContext()
 
+  const navigate= useNavigate()
 
   const authToken=localStorage.getItem('auth-token');
   return (
     <>
       <Navbar></Navbar>
       {profilePopup && <ProfilePopup/>}
-      <CarouselHome/>
       <Routes>
         <Route path='/' element={<HomeContainers/>} />
         <Route path='/product/:id' element={<ProductPage/>} />
@@ -35,8 +35,12 @@ export default function Home() {
         <Route path='/profile' element={<ProfilePage/>} />
         <Route path='/wishlist' element={<WishlistPage/>} />
         <Route path='/cart' element={<CartPage/>} />
-        <Route path='/aaa' element={<MainSlider/>} />
+
+        <Route  exact path='*' element={<NotFound/>}/>
+        <Route path='/logout' element={()=>{localStorage.removeItem('auth-token')
+                                       navigate('/login')}} />
       </Routes>
+      <Footer/>
     </>
   )
 }

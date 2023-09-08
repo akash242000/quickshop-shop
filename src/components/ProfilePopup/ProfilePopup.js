@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './ProfilePopup.css'
 import { useProfilePopupContext } from '../../contex/popupContex';
 
@@ -8,15 +8,7 @@ export default function ProfilePopup() {
     const authToken= localStorage.getItem('auth-token');
     const {profilePopup,turnProfilePopup} = useProfilePopupContext();
 
-
-
-    // document.addEventListener('DOMContentLoaded', ()=>{
-    //     console.log("done")
-    //     let popupBg =  document.querySelector('.profile-popup-bg');
-    //     popupBg.addEventListener('click',()=>{
-    //         console.log("clicked")
-    //     })
-    // })
+    const navigate = useNavigate();
 
     function handleClick(e){
         if(e.target.className==="profile-popup-bg"){
@@ -28,6 +20,11 @@ export default function ProfilePopup() {
         if(e.target.className==="profile-p-popup-link"){
             turnProfilePopup();
         }
+    }
+
+    function handleLogout(){
+        localStorage.removeItem('auth-token');
+        navigate('/login')
     }
 
 
@@ -55,8 +52,8 @@ export default function ProfilePopup() {
                     <Link to={'/about'} className='profile-p-popup-link' >About Us</Link>
                 </span>
         
-                <span className="profile-p-popup">
-                    <Link to={'/logout'} className='profile-p-popup-link' >Logout</Link>
+                <span className="profile-p-popup" onClick={handleLogout}>
+                    <Link className='profile-p-popup-link' >Logout</Link>
                 </span>
 
     

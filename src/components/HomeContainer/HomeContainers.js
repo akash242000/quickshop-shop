@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './HomeContainer.css'
 import ProductCat from '../ProductCat/ProductCat'
 import CategoriesNav from '../Navbar/CategoriesNav'
+import CarouselHome from '../CarouselHome/CarouselHome'
 
 export default function HomeContainers() {
 
@@ -31,6 +32,7 @@ export default function HomeContainers() {
   return (
     <div className='home-container'>
       <CategoriesNav homeNav />
+      <CarouselHome/>
       <ProductCat title={"Deals of the Day"} data={dodProducts}/>
       <ProductCat title={"Under ₹100"} data={under100Products.slice(0,4)}/>
       <ProductCat title={"Trending Smartphones"} data={smartphones.slice(0,4)}/>

@@ -2,6 +2,7 @@
 .cartpage{
     width: 80%;
     margin: auto;
+    min-height: 100vh;
 }
 
 .header> h3{
@@ -86,7 +87,7 @@
 
 .cart-units-input{
     font-size: 15px;
-    width: 35px;
+    width: 52px;
     padding: 3px 5px;
 }
 
@@ -100,6 +101,10 @@
 
 .cart-pd-heading{
     font-weight: 400;
+}
+
+.cart-items-list > .cart-product-cart:last-child{
+    border: none;
 }
 
 @media (max-width:800px){

@@ -11,13 +11,13 @@ export default function CarouselHome() {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg" class="d-block w-100" alt="..."/>
+      <img src="/c1.webp" class="d-block w-100" alt="..."/>
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg" class="d-block w-100" alt="..."/>
+      <img src="/c2.webp" class="d-block w-100" alt="..."/>
     </div>
     <div class="carousel-item">
-      <img src="https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg" class="d-block w-100" alt="..."/>
+      <img src="/c3.webp" class="d-block w-100" alt="..."/>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

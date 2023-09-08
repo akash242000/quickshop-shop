@@ -20,7 +20,6 @@ export default function Login() {
 
   async function handleClick(){
     const response = await dispatch(checkPassword({email,password}));
-    console.log(response);
 
     if(!response.payload){
       setErrors([{message:"User Does Not Exists!"}])

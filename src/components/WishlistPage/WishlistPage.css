@@ -3,6 +3,7 @@
     width: 80%;
     margin: auto;
     margin-top: 2rem;
+    min-height: 100vh;
 }
 
 .wishlist-list{
@@ -15,10 +16,16 @@
 .wishlist-card{
     width: 100%;
     background-color: var(--color-border-trans);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .wishlist-card>img{
     width: 100%;
+    object-fit: contain;
+    height: 100%;
 }
 
 .wishlist-card>h3{
@@ -30,4 +37,7 @@
 .wishlist-card:hover{
     border: 1px solid red;
 }
+
+
+
 
