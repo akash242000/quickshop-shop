@@ -53,7 +53,7 @@ export default function CartProductCard({product}) {
               </select>
               <label>Units</label>
             </div>
-              <button  onClick={deleteItem} className='btn-small btn'>Remove</button>
+              <button onClick={deleteItem} className='btn-small btn'>Remove</button>
           </div>
         </div>
       </div>

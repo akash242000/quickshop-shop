@@ -6,8 +6,25 @@
     margin-top: 2rem;
 }
 
+.product-header-section{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+.product-main-box{
+    width: 70%;
+}
+
+
 .product-pictures-box{
     width: 40%;
+    display: flex;
+    gap: 1rem;
+    position: sticky;
+    top: 4rem;
+    left: 0;
+    height: fit-content;
 }
 
 .main-photo{
@@ -18,10 +35,7 @@
     width: 100%;
 }
 
-.product-header-section{
-    display: flex;
-    gap: 2rem;
-}
+
 
 .product-info-header>h2{
     font-weight: 400;
@@ -131,4 +145,96 @@
     margin: 0;
     width: 135px;
     padding: 10px 15px !important;
+}
+
+#wishlist-heart{
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+
+/****Customer Reviews*****/
+.customer-reviews-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.customer-reviews-section{
+    width: 100%;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.customer-review-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fee;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.c-r-card-header{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.review-form-component{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    gap: 2px;
+}
+
+.review-form-component > select{
+    width: 50px;
+    padding: 8px 5px;
+    font-size: 15px;
+    background: #ffe3e3;
+    border: 1px;
+    border-radius: 8px;
+}
+
+.reiview-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.review-form-component> textarea{
+    height: 4rem;
+    padding: 5px 5px;
+    font-family: inherit;
+    resize: none;
+    border-radius: 8px;
+    border: 2px solid #d9d9d9;
+}
+
+.reiview-form > button{
+    width: 100px;
+}
+
+@media (max-width:800px) {
+    .product-header-section {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .product-pictures-box {
+        width: 100%;
+        position: unset;
+    }
+
+    .product-main-box {
+        width: 100%;
+    }
 }

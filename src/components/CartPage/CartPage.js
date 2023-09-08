@@ -47,7 +47,7 @@ export default function CartPage() {
         </div>
 
         <div className="cart-page-total-box">
-          <h2>Total</h2>
+          <h3>Total:</h3>
           <h2 className='total-heading' >{toRuppe.format(cartTotal)}</h2>
         </div>
       </section>

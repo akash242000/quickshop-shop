@@ -6,13 +6,22 @@
     padding: 0 10px;
 }
 
-.product-cat{
+.product-cat {
     margin: 3.5rem 0;
-    background-color: #f5dcdc;
+    background-color: #ffcbcb;
     padding: 1rem 0;
-}
+    border-radius: 8px;
+  }
 
 .product-cat-heading{
     margin-bottom: 1rem;
     padding: 0 10px;
+}
+
+@media (max-width:800px) {
+    .products-list{
+        gap: 0.2rem;
+        padding: 0 0px;
+    }
+
 }

@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const fetchUser = require('../middleware/fetchUser');
+const { v4: uuidv4 } = require('uuid');
 
 router.get('/', function(req, res){
     res.send("Register")
@@ -25,7 +26,10 @@ router.post('/register',[body("email").isEmail(),
                     const user= await User.create({
                         username:req.body.username,
                         password:bcrypt.hashSync(req.body.password, 5),
-                        email:req.body.email
+                        email:req.body.email,
+                        cartItems:[],
+                        wishlist:[],
+                        user_id:uuidv4()
                     })
                     const authtoken=jwt.sign({id:user.id}, process.env.JWT_SECRET);
                     
@@ -82,6 +86,15 @@ router.post("/getUser", fetchUser, async function(req, res){
 
     }
 
+})
+
+router.post('/getUserById/:userId', async(req, res)=>{
+    try {
+        const user = await User.findOne({user_id:req.params.userId}).select('username');
+        res.json(user.username)
+    } catch (error) {
+        return res.status(400).json("Error");
+    }
 })
 
 module.exports= router;

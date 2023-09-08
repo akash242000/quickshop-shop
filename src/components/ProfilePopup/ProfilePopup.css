@@ -1,0 +1,37 @@
+
+
+.profile-popup-bg{
+    display: flex;
+    z-index: 5;
+    justify-content: end;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(255, 0, 0, 0.307);
+}
+
+.profile-popup{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 0;
+    width: 140px;
+    position: fixed;
+}
+
+.profile-p-popup{
+    width: 100%;
+    /* padding: 8px 18px; */
+}
+
+.profile-p-popup>a{
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    display: block;
+    padding: 9px 10px;
+}
+
+.profile-p-popup:hover{
+    background-color: rgb(255, 208, 208);
+}

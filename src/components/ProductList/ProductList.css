@@ -84,3 +84,61 @@
 .sort-options .rating-indicator {
     border: none;
 }
+
+.mrp-price-sch{
+    text-decoration: line-through;
+}
+
+.discount-price-sch{
+    color: red;
+}
+
+@media (max-width:740px) {
+
+    .search-products-list{
+        width: 100%;   
+    }
+
+
+    .sorting-box{
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        position: unset;
+        justify-content: space-between;
+    }
+    .products-list-container {
+        flex-direction: column;
+    }
+
+    .sort-inner-options{
+        min-width: 110px;
+    }
+
+    .sort-box{
+        gap: 4px;
+        margin-bottom: 2px;
+    }
+
+    .sort-box-heading {
+        font-size: 13px;
+    }
+
+    .sort-box label{
+        font-size: 13px;
+    }
+
+    .sort-options  .fa-star{
+        font-size: 13px;
+    }
+
+    .checkbox {
+        width: 12px;
+    }
+
+    .rating-sort-box{
+        gap: 1px;
+    }
+
+}

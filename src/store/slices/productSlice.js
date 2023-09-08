@@ -48,6 +48,29 @@ export const fetchDealsOfDay = createAsyncThunk('products/fetchDealsOfDay', asyn
     }
 })
 
+
+export const addProductReview = createAsyncThunk('products/addProductReview', async({authToken, userReview})=>{
+    try {
+        const {productId, comment, rating} = userReview;
+
+        const response =await fetch(`http://localhost:5000/reviews/addReview/${productId}`, {
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Credentials': 'true',
+                'auth-token':authToken
+            },
+            body:JSON.stringify({productId, comment, rating})
+        });
+        const data= await response.json();
+        return {data,productId};
+
+    } catch (error) {
+        return error;
+    }
+})
+
 const productSlice= createSlice({
     name:'products',
     initialState,
@@ -66,8 +89,19 @@ const productSlice= createSlice({
         .addCase(fetchDealsOfDay.fulfilled, (state, action)=>{
             state.dealsOfDay=action.payload;
         })
+
+        .addCase(addProductReview.fulfilled, (state, action)=>{
+            state.products= state.products.map((product)=>{
+                if(product.product_id===action.payload.productId){
+                    return {...product, product_reviews:action.payload.data}
+                }      
+                return product
+            }
+            )
+        })
     }
 });
+
 
 export default productSlice.reducer;
 

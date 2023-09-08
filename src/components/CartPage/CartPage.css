@@ -101,3 +101,33 @@
 .cart-pd-heading{
     font-weight: 400;
 }
+
+@media (max-width:800px){
+    .cartpage {
+        width: 96%;
+      }
+
+    .cart-page-main{
+        flex-direction:column-reverse;
+    }
+
+    .cart-items-list {
+        width: 100%;
+    }
+
+    .cart-page-total-box {
+        width: 100%;
+        box-shadow: -2px 10px 16px -8px rgba(0,0,0,0.58);
+        display: flex;
+        gap: 5px;
+        background-color: #fffeb1;
+    }
+
+    .cart-page-total-box > h3 {
+        font-size: 15px;
+    }
+
+    .total-heading {
+        font-size: 18px;
+      }
+}

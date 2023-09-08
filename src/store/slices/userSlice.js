@@ -68,6 +68,24 @@ export const getUser = createAsyncThunk('users/getUser', async(authToken)=>{
     }
 })
 
+export const getUserById = createAsyncThunk('/users/getUserById', async(userId)=>{
+    try {
+        const response = await fetch(`${URL}/getUserById/${userId}`,{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Credentials': 'true',
+            }
+        });
+
+        const data = await response.json();
+        return  data;
+    } catch (error) {
+        return (error)
+    }
+})
+
 
 const userSlice = createSlice({
     name:'users',
@@ -95,6 +113,10 @@ const userSlice = createSlice({
         .addCase(getUser.fulfilled, (state, action)=>{
             state.userInfo= action.payload;
             state.status ='fullfilled'
+        })
+
+        .addCase(getUserById.fulfilled, (state, action)=>{
+            return action.payload;
         })
     }
 

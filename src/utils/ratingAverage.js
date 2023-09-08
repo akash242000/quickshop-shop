@@ -1,7 +1,7 @@
 
 function ratingAverage(total){
     let rating= total.reduce((acc, curr)=>{
-        return acc+curr.rating;
+        return acc+parseInt(curr.rating);
     },0)
 
     rating= rating/total.length;

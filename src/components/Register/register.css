@@ -62,7 +62,7 @@
     background-color: var(--color-button-hover);
 }
 
-.btn-submit:disabled{
+.btn:disabled{
     color: rgb(190, 190, 190);
     background: var(--color-muted);
     cursor: none;

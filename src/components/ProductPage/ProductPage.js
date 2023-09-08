@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getProductbyId } from '../../store/slices/productSlice';
+import { addProductReview, getProductbyId } from '../../store/slices/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductImagesGrid from './ProductImagesGrid';
 import { toRuppe } from '../../utils/currencyFormat';
@@ -9,20 +9,26 @@ import RatingStars from '../RatingStars/RatingStars';
 import ratingAverage from '../../utils/ratingAverage';
 import discount from '../../utils/discountCalc';
 import { addCartItem, cartItemAddedStatus, checkInCart } from '../../store/slices/cartSlice';
+import { checkInWishlist ,addWishlistItem, deleteWishlistItem } from '../../store/slices/wishlistSlice';
+import CustomerReview from './CustomerReview';
+import AddReview from './AddReview';
+
 
 export default function ProductPage() {
 
   const params = useParams();
   const productId = params.id;
-  
+
   let product = useSelector((state)=>getProductbyId(state,productId));
 
   let cartStatus="Add to Cart";
+  let wishlistStatus= useSelector(state=>checkInWishlist(state, productId));
+
   const isPresentInCart=useSelector(state=>checkInCart(state,productId));
   
   const [PresentInCart, setPresentInCart] = useState('Add to Cart')
 
-  
+
   useEffect(()=>{
     setPresentInCart(isPresentInCart);
   },[handleAddtoCart])
@@ -30,11 +36,11 @@ export default function ProductPage() {
 
   const dispatch = useDispatch();
   
-  const [activePhoto, setActivePhoto] = useState(product.photos[0])
-  
+  const [activePhoto, setActivePhoto] = useState(product.photos[0]);
   
   const authToken = localStorage.getItem('auth-token');
-  
+
+
   function changeProductPhoto(image){
     setActivePhoto(image)
   }
@@ -42,10 +48,22 @@ export default function ProductPage() {
   async function handleAddtoCart(){
     dispatch(addCartItem({authToken,productId})).unwrap()
     .then((res)=> cartStatus="Added")
-    .catch(error=>cartStatus="Added")
+    .catch(error=>cartStatus="Not Added")
+  }
 
+  function addtoWishlist(){
+    dispatch(addWishlistItem({authToken,productId})).unwrap()
+    .then((res)=>wishlistStatus==true)
+    .catch(error=>console.log(error))
+  }
+
+  function removeFromWishlist(){
+    dispatch(deleteWishlistItem({authToken,productId})).unwrap()
+    .then((res)=>wishlistStatus==false)
+    .catch(error=>console.log(error))
   }
   
+
 
   return (
     <div className='product-page'>
@@ -87,7 +105,11 @@ export default function ProductPage() {
                 <>
                   <button className='btn btn-normal' disabled={isPresentInCart} onClick={handleAddtoCart} >{isPresentInCart?'Added!':cartStatus}</button>
                   <div className="wishlist-box">
-                    <i className="fa-regular fa-heart wishlist"></i>
+                    {wishlistStatus?
+                      <button id='wishlist-heart' onClick={removeFromWishlist}><i className="fa-solid fa-heart wishlist"></i></button>
+                      :
+                      <button id='wishlist-heart' onClick={addtoWishlist}><i className="fa-regular fa-heart wishlist"></i></button>
+                    }
                     <p>Wishlist</p>
                   </div>
                 </>
@@ -97,6 +119,19 @@ export default function ProductPage() {
                 </Link>
               }
               
+            </div>
+            
+            <div className="customer-reviews-section">
+              <h3>Customer Reviews</h3>
+              <div className="customer-reviews-list">
+                {product.product_reviews.map(item=>{
+                  return <CustomerReview review={item} />
+                })}
+
+                <AddReview authToken={authToken} productId={productId} />
+                
+              </div>
+
             </div>
 
         </div>

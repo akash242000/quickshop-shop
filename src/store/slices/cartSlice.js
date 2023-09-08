@@ -142,4 +142,8 @@ export const checkInCart=(state,productID)=>{
     return state.userProducts.userProducts.some(item=> item.productId===productID)
 }
 
+export const getCartItemCount= (state)=> state.userProducts.userProducts.reduce((acc,curr)=>{
+    return acc+ curr.quantity
+},0)
+
 export default cartSlice.reducer;

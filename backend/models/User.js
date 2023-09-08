@@ -21,6 +21,9 @@ const UserSchema = new Schema({
     },
     wishlist:{
         type:Array
+    },
+    user_id:{
+        type:String
     }
 });
 

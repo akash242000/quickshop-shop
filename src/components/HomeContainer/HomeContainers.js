@@ -3,6 +3,7 @@ import { fetchProducts, fetchDealsOfDay, allProducts, dealsOfDayProducts } from 
 import { useDispatch, useSelector } from 'react-redux'
 import './HomeContainer.css'
 import ProductCat from '../ProductCat/ProductCat'
+import CategoriesNav from '../Navbar/CategoriesNav'
 
 export default function HomeContainers() {
 
@@ -29,6 +30,7 @@ export default function HomeContainers() {
   },[])
   return (
     <div className='home-container'>
+      <CategoriesNav homeNav />
       <ProductCat title={"Deals of the Day"} data={dodProducts}/>
       <ProductCat title={"Under ₹100"} data={under100Products.slice(0,4)}/>
       <ProductCat title={"Trending Smartphones"} data={smartphones.slice(0,4)}/>

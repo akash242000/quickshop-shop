@@ -17,7 +17,6 @@ export default function ProductList({ filter,category }) {
 
     useEffect(()=>{
       revertSort();
-      console.log("Catergory Changed")
     },[filter,category])
     let prodcutsLoading=useSelector(productsLoading);
 
@@ -26,7 +25,6 @@ export default function ProductList({ filter,category }) {
     const [ratingSort, setRatingSort] = useState(6);
     const [discountSort, setDiscountSort] = useState(0);
     
-    console.log(discountSort)
 
     function updateProducts(getProducts){
       if(filter){
@@ -81,165 +79,171 @@ export default function ProductList({ filter,category }) {
       <div className="sorting-box">
 
         {/****** Price *******/}
-        <h4 className="sort-box-heading">Price:</h4>
-        <div className="price-sort-box sort-box">
-          <div className="sort-options">
-            <input type="radio" name="price-sort"  
-                                value="[0,100]" 
-                                className='checkbox' 
-                                onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
-                                checked={JSON.stringify(priceSort)==="[0,100]"}
-                                />
-            <label>Under ₹100</label>
-          </div>
+        <div className="sort-inner-options">
+          <h4 className="sort-box-heading">Price:</h4>
+          <div className="price-sort-box sort-box">
+            <div className="sort-options">
+              <input type="radio" name="price-sort"  
+                                  value="[0,100]" 
+                                  className='checkbox' 
+                                  onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
+                                  checked={JSON.stringify(priceSort)==="[0,100]"}
+                                  />
+              <label>Under ₹100</label>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" name="price-sort"  
-                                value="[100,300]" 
-                                className='checkbox' 
-                                onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
-                                checked={JSON.stringify(priceSort)==="[100,300]"}
-                                />
-            <label>₹100-₹300</label>
-          </div>
+            <div className="sort-options">
+              <input type="radio" name="price-sort"  
+                                  value="[100,300]" 
+                                  className='checkbox' 
+                                  onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
+                                  checked={JSON.stringify(priceSort)==="[100,300]"}
+                                  />
+              <label>₹100-₹300</label>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" name="price-sort"  
-                                value="[300,1000]" 
-                                className='checkbox' 
-                                onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
-                                checked={JSON.stringify(priceSort)==="[300,1000]"}
-                                />
-            <label>₹300-₹1000</label>
-          </div>
+            <div className="sort-options">
+              <input type="radio" name="price-sort"  
+                                  value="[300,1000]" 
+                                  className='checkbox' 
+                                  onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
+                                  checked={JSON.stringify(priceSort)==="[300,1000]"}
+                                  />
+              <label>₹300-₹1000</label>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" name="price-sort"  
-                                value="[1000,100000]" 
-                                className='checkbox' 
-                                onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
-                                checked={JSON.stringify(priceSort)==="[1000,100000]"}
-                                />
-            <label>Over ₹1000</label>
-          </div>
+            <div className="sort-options">
+              <input type="radio" name="price-sort"  
+                                  value="[1000,100000]" 
+                                  className='checkbox' 
+                                  onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
+                                  checked={JSON.stringify(priceSort)==="[1000,100000]"}
+                                  />
+              <label>Over ₹1000</label>
+            </div>
 
-          {/* <div className="sort-options">
-            <input type="radio" name="price-sort"  
-                                value="[0,100000000]" 
-                                className='checkbox' 
-                                onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
-                                checked
-                                />
-            <label>All</label>
-          </div> */}
+            {/* <div className="sort-options">
+              <input type="radio" name="price-sort"  
+                                  value="[0,100000000]" 
+                                  className='checkbox' 
+                                  onChange={(event)=>{setPriceSort(JSON.parse(event.target.value))}} 
+                                  checked
+                                  />
+              <label>All</label>
+            </div> */}
+          </div>
         </div>
 
 
         {/****** Ratings *******/}
-        <h4 className="sort-box-heading">Ratings:</h4>
-        <div className="rating-sort-box sort-box">
-          <div className="sort-options">
-            <input type="radio" 
-                   name="rating-sort"  
-                   value={5} 
-                   className='checkbox' 
-                   onChange={(event)=>{setRatingSort(event.target.value)}} 
-                   checked={ratingSort==="5"}
-                                />
-            <RatingStars ratings={5}/>
-          </div>
+        <div className="sort-inner-options">
+          <h4 className="sort-box-heading">Ratings:</h4>
+          <div className="rating-sort-box sort-box">
+            <div className="sort-options">
+              <input type="radio" 
+                    name="rating-sort"  
+                    value={5} 
+                    className='checkbox' 
+                    onChange={(event)=>{setRatingSort(event.target.value)}} 
+                    checked={ratingSort==="5"}
+                                  />
+              <RatingStars ratings={5}/>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" 
-                   name="rating-sort"  
-                   value={4} 
-                   className='checkbox' 
-                   onChange={(event)=>{setRatingSort(event.target.value)}} 
-                   checked={ratingSort==="4"}
-                                />
-            <RatingStars ratings={4}/>
-          </div>
+            <div className="sort-options">
+              <input type="radio" 
+                    name="rating-sort"  
+                    value={4} 
+                    className='checkbox' 
+                    onChange={(event)=>{setRatingSort(event.target.value)}} 
+                    checked={ratingSort==="4"}
+                                  />
+              <RatingStars ratings={4}/>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" 
-                   name="rating-sort"  
-                   value={3} 
-                   className='checkbox' 
-                   onChange={(event)=>{setRatingSort(event.target.value)}} 
-                   checked={ratingSort==="3"}
-                  />
-            <RatingStars ratings={3}/>
-          </div>
+            <div className="sort-options">
+              <input type="radio" 
+                    name="rating-sort"  
+                    value={3} 
+                    className='checkbox' 
+                    onChange={(event)=>{setRatingSort(event.target.value)}} 
+                    checked={ratingSort==="3"}
+                    />
+              <RatingStars ratings={3}/>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" 
-                   name="rating-sort"  
-                   value={2} 
-                   className='checkbox' 
-                   onChange={(event)=>{setRatingSort(event.target.value)}} 
-                   checked={ratingSort==="2"}
-                                />
-            <RatingStars ratings={2}/>
-          </div>
+            <div className="sort-options">
+              <input type="radio" 
+                    name="rating-sort"  
+                    value={2} 
+                    className='checkbox' 
+                    onChange={(event)=>{setRatingSort(event.target.value)}} 
+                    checked={ratingSort==="2"}
+                                  />
+              <RatingStars ratings={2}/>
+            </div>
 
-          <div className="sort-options">
-            <input type="radio" 
-                   name="rating-sort" 
-                   value={1} 
-                   className='checkbox'
-                   onChange={(event)=>{setRatingSort(event.target.value)}}  
-                   checked={ratingSort==="1"}
-                   />
-            <RatingStars ratings={1}/>
+            <div className="sort-options">
+              <input type="radio" 
+                    name="rating-sort" 
+                    value={1} 
+                    className='checkbox'
+                    onChange={(event)=>{setRatingSort(event.target.value)}}  
+                    checked={ratingSort==="1"}
+                    />
+              <RatingStars ratings={1}/>
+            </div>
           </div>
         </div>
 
         {/****** Discount *******/}
-        <h4 className="sort-box-heading">Discount:</h4>
-        <div className="discount-sort-box sort-box">
+        <div className="sort-inner-options">
+          <h4 className="sort-box-heading">Discount:</h4>
+          <div className="discount-sort-box sort-box">
 
-          <div className="sort-options">
-            <input type="radio" 
-                   name="discount-sort"  
-                   value={10} className='checkbox' 
-                   onChange={(event)=>{setDiscountSort(event.target.value)}} 
-                   checked={discountSort==='10'}
-            />
-            <label>10% Off and more</label>
+            <div className="sort-options">
+              <input type="radio" 
+                    name="discount-sort"  
+                    value={10} className='checkbox' 
+                    onChange={(event)=>{setDiscountSort(event.target.value)}} 
+                    checked={discountSort==='10'}
+              />
+              <label>10% Off and more</label>
+            </div>
+
+            <div className="sort-options">
+              <input type="radio" 
+                    name="discount-sort"  
+                    value={20} className='checkbox' 
+                    onChange={(event)=>{setDiscountSort(event.target.value)}} 
+                    checked={discountSort==='20'}
+                    />
+              <label>20% Off and more</label>
+            </div>
+
+            <div className="sort-options">
+              <input type="radio" 
+                    name="discount-sort"  
+                    value={40} className='checkbox' 
+                    onChange={(event)=>{setDiscountSort(event.target.value)}} 
+                    checked={discountSort==='40'}
+                    />
+              <label>40% Off and more</label>
+            </div>
+
+            {/* <div className="sort-options">
+              <input type="radio" 
+                    name="discount-sort"  
+                    value={0} className='checkbox' 
+                    onChange={(event)=>{setDiscountSort(event.target.value)}} 
+                    checked
+                    />
+              <label>All</label>
+            </div> */}
           </div>
-
-          <div className="sort-options">
-            <input type="radio" 
-                   name="discount-sort"  
-                   value={20} className='checkbox' 
-                   onChange={(event)=>{setDiscountSort(event.target.value)}} 
-                   checked={discountSort==='20'}
-                   />
-            <label>20% Off and more</label>
-          </div>
-
-          <div className="sort-options">
-            <input type="radio" 
-                   name="discount-sort"  
-                   value={40} className='checkbox' 
-                   onChange={(event)=>{setDiscountSort(event.target.value)}} 
-                   checked={discountSort==='40'}
-                   />
-            <label>40% Off and more</label>
-          </div>
-
-          {/* <div className="sort-options">
-            <input type="radio" 
-                   name="discount-sort"  
-                   value={0} className='checkbox' 
-                   onChange={(event)=>{setDiscountSort(event.target.value)}} 
-                   checked
-                   />
-            <label>All</label>
-          </div> */}
         </div>
 
-        <button onClick={revertSort} >Clear</button>
+        <button onClick={revertSort} className='btn' >Clear</button>
 
       </div>
       

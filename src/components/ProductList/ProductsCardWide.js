@@ -29,8 +29,8 @@ export default function ProductsCardWide({product}) {
 
           <div className="search-product-price-box">
             <h4>{toRuppe.format(product.product_price)}</h4>
-            <span>MRP:{toRuppe.format(product.mrp)}</span>
-            <span>-{discount(product.product_price ,product.mrp)}%</span>
+            <span className='mrp-price-sch'>MRP:{toRuppe.format(product.mrp)}</span>
+            <span className='discount-price-sch'>-{discount(product.product_price ,product.mrp)}%</span>
           </div>
       </div>
     </Link>

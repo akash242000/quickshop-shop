@@ -37,6 +37,8 @@ app.use('/cart', require('./routes/cart'));
 
 app.use('/wishlist', require('./routes/wishlist'));
 
+app.use('/reviews', require('./routes/reviews'));
+
 app.listen(port, function(){
     console.log(`listing on port ${port}`)
 })
