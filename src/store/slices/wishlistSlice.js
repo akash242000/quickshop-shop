@@ -4,7 +4,8 @@ const initialState={
     wishlist:[],
 }
 
-const URL ="http://localhost:5000/wishlist"
+// const URL ="http://localhost:5000/wishlist"
+const URL = `${process.env.REACT_APP_URL}/wishlist`
 
 export const getWishlist = createAsyncThunk('wishlist/getWishlist', async(authToken)=>{
     try {

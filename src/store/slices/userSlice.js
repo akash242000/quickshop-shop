@@ -7,7 +7,8 @@ const initialState={
     loggedIn:false
 }
 
-const URL = "http://localhost:5000/auth/";
+// const URL = "http://localhost:5000/auth/";
+const URL = `${process.env.REACT_APP_URL}/auth/`;
 
 export const fetchUser=createAsyncThunk("users/fetchUser", async ({username,email,password})=>{
     try{

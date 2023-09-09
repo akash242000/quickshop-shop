@@ -10,7 +10,8 @@ export default function CustomerReview({review}) {
 
   const [userName, setUserName] = useState('')
 
-  let URL="http://localhost:5000/auth/getUserById"
+  // let URL="http://localhost:5000/auth/getUserById"
+  let URL=`${process.env.REACT_APP_URL}/auth/getUserById`
 
   const [loading, isLoading] = useState(false);
 

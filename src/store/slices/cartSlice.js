@@ -8,7 +8,8 @@ const initialState={
     error:null
 }
 
-const URL = 'http://localhost:5000/cart';
+// const URL = 'http://localhost:5000/cart';
+const URL = `${process.env.REACT_APP_URL}/cart`;
 
 export const fetchUserCart = createAsyncThunk('userProducts/fetchUserCart', async (authToken)=>{
     try {
