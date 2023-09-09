@@ -8,7 +8,7 @@ const initialState={
 }
 
 // const URL = "http://localhost:5000/products";
-const URL = `${process.env.REACT_APP_URL}/products`;
+const URL = `http://localhost:5000/products`;
 
 export const fetchProducts= createAsyncThunk('products/fetchProducts', async()=>{
     try {

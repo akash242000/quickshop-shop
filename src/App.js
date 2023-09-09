@@ -9,7 +9,7 @@ import { PopupContexProvider } from './contex/popupContex';
 function App() {
   
   const authToken = localStorage.getItem('auth-token');
-  console.log(process.env.REACT_APP_URL)
+
 
   return (
     <PopupContexProvider>

@@ -12,6 +12,7 @@ export default function HomeContainers() {
   const products= useSelector(allProducts);
   const dodProducts = useSelector(dealsOfDayProducts)
 
+
   const under100Products= [...products].filter((item)=>{
     return item.product_price<=100;
   })
