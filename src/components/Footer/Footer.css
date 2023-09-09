@@ -7,10 +7,15 @@
     padding: 10px 15px;
     justify-content: space-between;
     margin-top: 3rem;
+    align-items: center;
 }
 
 .ft-right-sec{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.ft-left-sec{
+    height: 60%;
 }

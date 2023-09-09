@@ -23,7 +23,7 @@ export default function ProductListInner({products, loading}) {
   {
     loading!=='fullfilled'?
     <div className="loading">
-      Loading...
+      <img src="/loading.gif" alt="" />
     </div>
     :
     <>

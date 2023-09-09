@@ -12,8 +12,10 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
-const port =5000;
+const port = process.env.PORT || 5000;
 connectDB();
+
+if(process.env.NODE_ENV==='production')
 
 
 

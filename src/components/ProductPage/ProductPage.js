@@ -125,7 +125,7 @@ export default function ProductPage() {
               <h3>Customer Reviews</h3>
               <div className="customer-reviews-list">
                 {product.product_reviews.map(item=>{
-                  return <CustomerReview review={item} />
+                  return <CustomerReview key={item.user_id} review={item} />
                 })}
 
                 <AddReview authToken={authToken} productId={productId} />
