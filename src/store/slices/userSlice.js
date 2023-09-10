@@ -8,7 +8,7 @@ const initialState={
 }
 
 // const URL = "http://localhost:5000/auth/";
-const URL = `${process.env.REACT_APP_URL}/auth/`;
+const URL = `${process.env.REACT_APP_URL}/auth`;
 
 export const fetchUser=createAsyncThunk("users/fetchUser", async ({username,email,password})=>{
     try{
@@ -24,7 +24,6 @@ export const fetchUser=createAsyncThunk("users/fetchUser", async ({username,emai
 
         const data = await response.json();
         return await data;
-
     }catch(error){
         console.log(error)
     }
@@ -42,11 +41,15 @@ export const checkPassword = createAsyncThunk('users/checkPassword', async({emai
             body:JSON.stringify({email,password})
         });
 
+        // if(!response.ok){
+        //     throw new Error("User Does Not Exists!")
+        // }
+
         const data= await response.json();
         return await data;
 
     } catch (error) {
-        console.log(error)
+        return error;
     }
 });
 
@@ -97,8 +100,7 @@ const userSlice = createSlice({
     extraReducers:(builder)=>{
         builder
         .addCase(fetchUser.fulfilled, (state,action)=>{
-            state.userInfo= action.payload;
-            if(state.userInfo){
+            if(typeof(action.payload)==="string"){
                 localStorage.setItem('auth-token',state.userInfo)
             }
         })

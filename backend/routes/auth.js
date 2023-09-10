@@ -36,8 +36,8 @@ router.post('/register',[body("email").isEmail(),
                     res.json(authtoken)
                 }
                 catch{
-                        res.send("Error")};
-                console.log(req.body)
+                       return res.status(400).json({ errors: [{msg:"Internal Error", path:"Server"}] })};
+                
              }
 
                 
@@ -59,20 +59,20 @@ router.post("/login",[body('email').isEmail(),
                 const user= await User.findOne({email});
 
                 if(!user){
-                    return res.send("User Does not Exists")
+                    return res.status(400).json({ errors: [{msg:"User Does not Exists"}] })
                 }
                 
                 const checkPassword= await bcrypt.compare(password, user.password);
 
                 if(!checkPassword){
-                    return res.send("User Does not Exists")
+                    return res.status(400).json({ errors: [{msg:"User Does not Exists"}] })
                 }
 
                 const authtoken=jwt.sign({id:user.id}, process.env.JWT_SECRET);
-                res.json(authtoken)
+                return res.json(authtoken)
 
-            }catch{
-                res.send("Error");
+            }catch(error){
+                return res.status(400).json({ errors: [{msg:"User Does not Exists"}] });
             }
 
 })

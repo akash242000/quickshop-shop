@@ -13,14 +13,25 @@ import WishlistPage from '../WishlistPage/WishlistPage';
 import ProfilePopup from '../ProfilePopup/ProfilePopup';
 import { useProfilePopupContext } from '../../contex/popupContex';
 import Footer from '../Footer/Footer';
+import { useDispatch } from 'react-redux';
+import { fetchUser } from '../../store/slices/userSlice';
+import { fetchUserCart } from '../../store/slices/cartSlice';
+import { getWishlist } from '../../store/slices/wishlistSlice';
 
 export default function Home() {
 
   const {profilePopup,showProfilePopup} = useProfilePopupContext()
 
-  const navigate= useNavigate()
+  const navigate= useNavigate();
+  const dispatch= useDispatch();
 
-  const authToken=localStorage.getItem('auth-token');
+  
+  if(localStorage.getItem('auth-token')){
+    const authToken=localStorage.getItem('auth-token');
+    dispatch(fetchUser(authToken));
+    dispatch(fetchUserCart(authToken));
+    dispatch(getWishlist(authToken))
+  }
   return (
     <>
       <Navbar></Navbar>

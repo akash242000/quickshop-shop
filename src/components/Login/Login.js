@@ -19,8 +19,7 @@ export default function Login() {
   }
 
   async function handleClick(){
-    const response = await dispatch(checkPassword({email,password}));
-
+    const response =await dispatch(checkPassword({email,password}));
     if(!response.payload){
       setErrors([{message:"User Does Not Exists!"}])
     }else if(typeof(response.payload)==="string"){
@@ -65,7 +64,7 @@ export default function Login() {
                     if(error.message){
                       return <p className='error-para'>{error.message}</p>
                     }
-                    return <p className='error-para' key={index}>{capitalize(error.path)} has {error.msg}</p>
+                    return <p className='error-para' key={index}>{capitalize(error.msg)}</p>
                 })}
             </div>}
 

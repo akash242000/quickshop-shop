@@ -28,7 +28,7 @@ export default function HomeContainers() {
 
   useEffect(()=>{
     dispatch(fetchDealsOfDay());
-    dispatch(fetchProducts());
+    // dispatch(fetchProducts());
   },[])
   return (
     <div className='home-container'>

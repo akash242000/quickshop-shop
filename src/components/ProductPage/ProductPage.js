@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { addProductReview, getProductbyId } from '../../store/slices/productSlice';
+import { addProductReview, fetchProducts, getProductbyId, productStatus } from '../../store/slices/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductImagesGrid from './ProductImagesGrid';
 import { toRuppe } from '../../utils/currencyFormat';
@@ -14,21 +14,28 @@ import CustomerReview from './CustomerReview';
 import AddReview from './AddReview';
 
 
-export default function ProductPage() {
+export default  function ProductPage() {
 
   const params = useParams();
   const productId = params.id;
 
-  let product = useSelector((state)=>getProductbyId(state,productId));
+  const productLoadStatus = useSelector(productStatus);
 
+  const [product, setProduct]= useState(useSelector((state)=> getProductbyId(state,productId)))
+
+  
+  console.log(product)
+  console.log(productLoadStatus)
+  
   let cartStatus="Add to Cart";
   let wishlistStatus= useSelector(state=>checkInWishlist(state, productId));
-
+  
   const isPresentInCart=useSelector(state=>checkInCart(state,productId));
   
   const [PresentInCart, setPresentInCart] = useState('Add to Cart')
-
-
+  
+  const [activePhoto, setActivePhoto] = useState(product.photos[0]);
+  
   useEffect(()=>{
     setPresentInCart(isPresentInCart);
   },[handleAddtoCart])
@@ -36,7 +43,6 @@ export default function ProductPage() {
 
   const dispatch = useDispatch();
   
-  const [activePhoto, setActivePhoto] = useState(product.photos[0]);
   
   const authToken = localStorage.getItem('auth-token');
 
@@ -66,6 +72,8 @@ export default function ProductPage() {
 
 
   return (
+  <>
+    {productLoadStatus==='fullfilled'?
     <div className='product-page'>
       <div className="product-header-section">
         <div className="product-pictures-box">
@@ -137,5 +145,9 @@ export default function ProductPage() {
         </div>
       </div>
     </div>
+    :
+    <>Loading...</>
+    }
+  </>
   )
 }

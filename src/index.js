@@ -15,6 +15,7 @@ store.dispatch(fetchProducts());
 if(localStorage.getItem('auth-token')){
   store.dispatch(fetchUserCart(localStorage.getItem('auth-token')))
   store.dispatch(getWishlist(localStorage.getItem('auth-token')))
+
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
