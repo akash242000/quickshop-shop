@@ -101,7 +101,7 @@ const userSlice = createSlice({
         builder
         .addCase(fetchUser.fulfilled, (state,action)=>{
             if(typeof(action.payload)==="string"){
-                localStorage.setItem('auth-token',state.userInfo)
+                localStorage.setItem('auth-token',action.payload)
             }
         })
 
